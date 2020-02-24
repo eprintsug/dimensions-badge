@@ -110,6 +110,21 @@ sub render
 		$frag->appendChild( $script );
 	}
 
+	if( defined $self->param( "data_attributes" ) && 
+		defined $self->param( "data_attributes" )->{"data-hide-zero-citations"} &&
+		$self->param( "data_attributes" )->{"data-hide-zero-citations"} eq "true"
+	)
+	{
+		# we may want to include some javascript to e.g. hide the box when a 'zero citations' badge is returned
+		if( defined $self->param( "zero_citation_js_url" ) )
+		{
+			my $script = $session->make_element( "script",
+				src=> $self->param( "zero_citation_js_url" ),
+			);
+			$frag->appendChild( $script );
+		}
+	}
+
 	return $frag;
 }
 

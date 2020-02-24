@@ -58,6 +58,18 @@ $c->{'dimensions_badge'}->{get_type_and_id} = sub {
 #	'data-hide-zero-citations' => 'true',
 #};
 
+# Hide zero citations - hiding the Box
+# 	If you are using the 'data-hide-zero-citations' attributre above, you may wish 
+# 	to un-comment the following line, which will ass a link to the javascript file
+# 	to the badge, resulting in the EPrints Box being hidden when there are no 
+# 	citations.
+#	You may also copy the example file to the 'auto' javascript directory, or 
+#	include your own custom javscript file if e.g. you are using the Bootstrap 
+#	framework in your repository.
+#
+#$c->{plugins}{"Screen::EPrint::Box::DimensionsBadge"}{params}{zero_citation_js_url} = "/javascript/dimensions-badge-hide-zero.js";
+
+
 
 # Javascript URL
 # 	By default the link to the badge javascript is included in the Box, or rendered

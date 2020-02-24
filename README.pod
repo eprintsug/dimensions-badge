@@ -5,7 +5,7 @@ EPrints::Plugin::Screen::EPrint::Box::DimensionsBadge
 =head1 DESCRIPTION
 
 By default this module will render a box on the EPrint summary page that will be
-populdated with a Dimensions badge if the item has an appropraite identifier, and
+populated with a Dimensions badge if the item has an appropraite identifier, and
 there is some Dimensions data for the item.
 
 There is also an EPScript method that can be called on an EPrint e.g. in a citation file.
@@ -32,6 +32,12 @@ The display of the badge can be altered by updating the configuration in the
 B<z_dimensions_badge.pl> configuration file.
 
 For a full description of the Dimensions badge, please see L<https://badge.dimensions.ai/>.
+
+If you want to use the 'hide zero citations' option for the badge, please read the notes in 
+B<z_dimensions_badge.pl>. There is a javascript file included with this plugin but you may
+wish to add it to the 'auto' directory, or include a different javascript file if you are using
+any custom rendering. Please see L<https://github.com/eprintsug/dimensions-badge/issues/1> for
+some additional details. 
 
 =head1 BUGS
 
