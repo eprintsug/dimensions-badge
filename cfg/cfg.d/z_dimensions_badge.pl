@@ -27,10 +27,10 @@ $c->{'dimensions_badge'}->{get_type_and_id} = sub {
                 return( "pmid", $eprint->value( "pmid" ) );
         }
 
-		# id_numbers that have 10. in them (rudimentary doi check)
-        if( $eprint->exists_and_set( "id_number" ) && ( $eprint->value( "id_number" ) =~ /\b10./ ) ){
-		        
-                return( "doi", $eprint->value( "id_number" ) );	
+	# id_numbers that have 10. in them (rudimentary doi check)
+        if( $eprint->exists_and_set( "id_number" ) &&  $eprint->value( "id_number" ) =~ /\b(10\..*?)\s*$/ )
+	{
+               	return( "doi", $1 ); #submatch from above
 	}
 
 	#other fields could be checked and returned here.
