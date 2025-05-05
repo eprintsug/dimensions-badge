@@ -94,7 +94,7 @@ sub render
 	my $span = $session->make_element( "span",
 		class => "__dimensions_badge_embed__",
 		"data-$self->{dimensions_id_type}" => $self->{dimensions_id},
-		(defined $self->param( 'data_attributes' ) ? %{$self->param( 'data_attributes' )} : undef ),
+		(defined $self->param( 'data_attributes' ) ? %{$self->param( 'data_attributes' )} : () ),
 	);
 	$frag->appendChild( $span );
 
